@@ -1,0 +1,102 @@
+<script>
+	function no()
+{
+	var uname = document.getElementById("uname").value;
+	 var psd = document.getElementById('psd').value;
+	 var psd1 = document.getElementById('psd1').value;
+     var state = document.getElementById('state').value;
+	 var skills = document.getElementById('skills').value;
+     var m = document.getElementById('male').value;
+	 var f = document.getElementById('female').value;
+	 var cri = document.getElementById("cricket");
+	  var hoc = document.getElementById("Hockey");
+	   var foo = document.getElementById("footboll");
+	var uname1 = /^[a-zA-Z ]+$/;
+	var psd11=/^[0-9]+$/;
+
+
+	if(uname=='')
+	{
+		alert("Plese Enter The Name");
+		return false;
+	}
+	else if(!uname.match(uname1))
+		{
+			alert("plese Enter Currect Name");
+			return false;
+		}
+		else if(psd=='')
+		{
+          alert("plese enter passward");
+          return false;
+		}
+		else if(!psd.match(psd11))
+		{
+			alert("plese enter currect passward (0 t0 9)");
+			return false;
+		}else  if(psd1=='')
+		{
+			alert("Re-Enter Passward");
+			return false;
+		} if(psd1!=psd)
+		{
+			alert("Re-Enter the currect - Passward");
+			return false;
+		}
+		else if(state=='')
+		{
+			alert("plese select state");
+			return false;
+		}
+		else if(skills=='')
+		{
+			alert("plese select skills");
+			return false;
+		}
+	else if(male.checked==false && female.checked==false)
+		{
+			alert("plese select gender");
+			return false;
+		}
+		if(cri.checked==false && hoc.checked==false && foo.checked==false)
+		{
+			alert("plese select hobbies");
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+
+
+}
+</script>
+<style type="text/css">
+	i input{
+	float:left;
+}
+</style>
+<body>
+	<form>
+		<fieldset style= "background-color:lightgreen;color:green;margin-left:40%;margin-right:40%;">
+	<i>Name</i><input type="text" id="uname"><br><br>
+	<i>passward</i><input type="password" id="psd" ><br><br>
+	 <i>Re-Enter passward</i><input type="password" id="psd1"  ><br><br>
+	 <i>select State</i><select id="state"><option value="">------</option>
+	 	<option>Mp</option> 
+		<option>Up</option><option>Gujrat</option>
+	</select><br><br>
+	 <i>select skills</i><select id="skills" multiple size="1">
+	 	<option value="">------</option><option>C</option>
+		<option>C++</option><option>JAVA</option>
+		<option>Pythan</option>
+	</select><br><br>
+	 <i>select gender</i><br><br><i>Male</i><input type="radio" id="male" name='gen'> 	<i>FeMale</i><input type="radio" id="female" name='gen'><br><br> 
+	 <i style="color:red">select hobbies</i><br><br> <input type="checkbox" id="Hockey"><i>Hockey </i><br><br><input type="checkbox" id="cricket"><i>cricket</i><br><br><input type="checkbox" id="footboll"><i>footboll </i><br><br>
+	<input type="submit" value="submit" style="margin-left:30%;background-color:lightcyan;color:red;" onclick="return no()">
+
+	
+	
+	</fieldset>
+	 </form>
+</body>
